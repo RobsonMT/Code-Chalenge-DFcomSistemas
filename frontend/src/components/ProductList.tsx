@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../services/api";
 import { formatPriceBRL } from "../utils/formatPriceBRL";
 import { formatDate } from "../utils/formatDate";
-
-interface Product {
-  _id: string;
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  createdAt: string;
-}
+import type { Product } from "../interfaces";
 
 export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);

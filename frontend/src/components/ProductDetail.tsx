@@ -4,21 +4,7 @@ import api from "../services/api";
 import ReviewForm from "./ReviewForm";
 import { formatPriceBRL } from "../utils/formatPriceBRL";
 import StarRating from "./StarRating";
-
-interface Product {
-  _id: string;
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  createdAt: string;
-}
-
-interface Review {
-  author: string;
-  comment: string;
-  rating: number;
-}
+import type { Product, Review } from "../interfaces";
 
 export default function ProductDetail() {
   const { id } = useParams();
