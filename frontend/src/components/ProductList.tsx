@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/api";
+import { formatPriceBRL } from "../utils/formatPriceBRL";
 
 interface Product {
   _id: string;
@@ -43,7 +44,9 @@ export default function ProductList() {
             <p className="text-blue-600 font-semibold">{p.name}</p>
             <p className="text-sm text-gray-600">Descrição: {p.description}</p>
             <p className="text-sm text-gray-600">Categoria: {p.category}</p>
-            <p className="text-sm text-gray-600">Preço: {p.price}</p>
+            <p className="text-sm text-gray-600">
+              Preço: {formatPriceBRL(p.price)}
+            </p>
             <p className="text-sm text-gray-600">Criado em: {p.createdAt}</p>
             <div className="mt-4 flex gap-2">
               <Link
@@ -54,7 +57,7 @@ export default function ProductList() {
               </Link>
               <button
                 onClick={() => handleDelete(p._id)}
-                className="bg-red-500 text-white px-3 py-1 rounded"
+                className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer"
               >
                 Deletar
               </button>
