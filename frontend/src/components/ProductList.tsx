@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/api";
 import { formatPriceBRL } from "../utils/formatPriceBRL";
+import { formatDate } from "../utils/formatDate";
 
 interface Product {
   _id: string;
@@ -47,7 +48,9 @@ export default function ProductList() {
             <p className="text-sm text-gray-600">
               Preço: {formatPriceBRL(p.price)}
             </p>
-            <p className="text-sm text-gray-600">Criado em: {p.createdAt}</p>
+            <p className="text-sm text-gray-600">
+              Criado em: {formatDate(p.createdAt)}
+            </p>
             <div className="mt-4 flex gap-2">
               <Link
                 to={`/product/${p._id}`}
