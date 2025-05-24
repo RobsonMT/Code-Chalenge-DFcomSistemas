@@ -11,7 +11,10 @@ export default function App() {
           <Link to="/" className="text-blue-500 font-bold">
             Produtos
           </Link>
-          <Link to="/new" className="bg-blue-500 text-white px-3 py-1 rounded">
+          <Link
+            to="/new"
+            className="bg-blue-500 text-white px-3 py-1 rounded inline-flex"
+          >
             Novo Produto
           </Link>
         </nav>

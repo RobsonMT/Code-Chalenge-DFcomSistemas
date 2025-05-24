@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import api from "../services/api";
 import ReviewForm from "./ReviewForm";
 import { formatPriceBRL } from "../utils/formatPriceBRL";
+import StarRating from "./StarRating";
 
 interface Product {
   _id: string;
@@ -45,7 +46,9 @@ export default function ProductDetail() {
       <p className="text-sm text-gray-600 mb-2">
         Preço: {formatPriceBRL(product.price)}
       </p>
-      <p className="text-yellow-500 font-semibold mb-4">Média: {avg}</p>
+      <p className="text-yellow-500 font-semibold mb-4">
+        Média: {avg} <StarRating rating={Number(avg)} />
+      </p>
 
       <h2 className="text-lg font-bold mt-6">Avaliações</h2>
       <ul className="mb-4">
